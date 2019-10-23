@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthLaylout from '../Hoc/AuthLayout'
-import { getSingleNav } from "../services/fakeUserService";
+import { getSingleNav } from "../Services/fakeUserService";
 import Content from '../components/Common/Content'
 
 class Support extends Component {
