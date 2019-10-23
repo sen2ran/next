@@ -9,21 +9,21 @@ class Support extends Component {
         metaTag: ""
     }
 
-    componentDidMount() {
-        const singleNav = getSingleNav("support")
-        this.setState({
-            name: singleNav.name,
-            metaTag: singleNav.metaTag
-        })
-    }
-
-    // static async getInitialProps({ req }) {
-    //     const res = getSingleNav("support")
-    //     return {
-    //         name: res.name,
-    //         metaTag: res.metaTag
-    //     }
+    // componentDidMount() {
+    //     const singleNav = getSingleNav("support")
+    //     this.setState({
+    //         name: singleNav.name,
+    //         metaTag: singleNav.metaTag
+    //     })
     // }
+
+    static async getInitialProps({ req }) {
+        const res = getSingleNav("support")
+        return {
+            name: res.name,
+            metaTag: res.metaTag
+        }
+    }
 
     render() {
         const {
@@ -31,9 +31,9 @@ class Support extends Component {
             image,
             shortDescription,
             description
-        } = this.state.metaTag
+        } = this.props.metaTag
 
-        const { name } = this.state
+        const { name } = this.props
         return (
             <AuthLaylout
                 name={name}
