@@ -17,13 +17,13 @@ class Support extends Component {
         })
     }
 
-    static async getInitialProps({ req }) {
-        const res = getSingleNav("support")
-        return {
-            name: res.name,
-            metaTag: res.metaTag
-        }
-    }
+    // static async getInitialProps({ req }) {
+    //     const res = getSingleNav("support")
+    //     return {
+    //         name: res.name,
+    //         metaTag: res.metaTag
+    //     }
+    // }
 
     render() {
         const {
@@ -31,9 +31,9 @@ class Support extends Component {
             image,
             shortDescription,
             description
-        } = this.props.metaTag
+        } = this.state.metaTag
 
-        const { name } = this.props
+        const { name } = this.state
         return (
             <AuthLaylout
                 name={name}
