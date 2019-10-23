@@ -17,6 +17,14 @@ class Support extends Component {
         })
     }
 
+    static async getInitialProps({ req }) {
+        const res = getSingleNav("support")
+        return {
+            name: res.name,
+            metaTag: res.metaTag
+        }
+    }
+
     render() {
         const {
             title,
@@ -42,13 +50,5 @@ class Support extends Component {
     }
 }
 
-
-Page.getInitialProps = async ({ req }) => {
-    const res = getSingleNav("support")
-    return {
-        name: res.name,
-        metaTag: res.metaTag
-    }
-}
 
 export default Support
