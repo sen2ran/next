@@ -8,26 +8,16 @@ class Support extends Component {
         name: "",
         metaTag: ""
     }
-
     componentDidMount() {
-        // const singleNav = getSingleNav("support")
-        // this.setState({
-        //     name: singleNav.name,
-        //     metaTag: singleNav.metaTag
-        // })
-
-        // const res =  axios.get('https://m-city-7c464.firebaseio.com/metatest.json')
-        //     .then((response) => {
-        //         console.log(response.data);
-        //     });
     }
-
     render() {
         const {
             title,
             image,
             shortDescription,
-            description
+            shortDescriptionRu,
+            description,
+            descriptionRu
         } = this.props.metaTag
 
         const { name } = this.props
@@ -35,12 +25,12 @@ class Support extends Component {
             <AuthLaylout
                 name={name}
                 title={title}
-                shortDescription={shortDescription}
+                shortDescription={shortDescriptionRu}
                 image={image}>
                 <Content
                     name={title}
                     imageUrl={image}
-                    description={description}
+                    description={descriptionRu}
                 />
             </AuthLaylout>
         )

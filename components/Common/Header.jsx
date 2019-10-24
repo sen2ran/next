@@ -1,79 +1,48 @@
-import React, { Component } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { HeaderContext } from '../../State/Contexts/HeaderContext'
 import { withRouter } from 'next/router';
-import { getNavDetails } from "../../Services/fakeUserService";
 import Link from 'next/link'
 
-class Header extends Component {
-  state = {
-    lang: 'ca',
-    navDetails: []
-  }
 
-  componentDidMount() {
-    console.log(this.props);
+const Header = () => {
+  const { headerState, dispatch } = useContext(HeaderContext)
+  const { lang, navDetails } = headerState
+  const [country, setCountry] = useState("")
 
-    const navDetails = getNavDetails("0001")
-    this.setState({
-      navDetails: navDetails.navs
+  useEffect(() => {
+    console.log(country);
+    console.log(lang);
+    if (country != lang) {
+      setCountry(lang)
+    }
+  }, [lang])
+
+  const countryChanged = (e) => {
+    setCountry(e.target.value)
+    dispatch({
+      type: 'CHANGE_LANG',
+      lang: e.target.value
     })
   }
 
+  return (
+    <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 className="my-0 mr-md-auto font-weight-normal">Header</h5>
 
-  selectedChange = (event) => {
-    console.log(event.target.value);
-    this.setState({
-      lang: event.target.value
-    })
-  }
+      <select value={country} onChange={countryChanged}>
+        <option value="ca">Ca</option>
+        <option value="in">In</option>
+      </select>
 
-  LogoutFn() {
-    localStorage.clear();
-    this.props.history.push('/sign-in')
-  }
-
-  render() {
-    const { navDetails, lang } = this.state
-    return (
-      <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 className="my-0 mr-md-auto font-weight-normal">Header</h5>
-
-        <select value={this.state.lang} onChange={this.selectedChange}>
-          <option value="ca">Ca</option>
-          <option value="in">In</option>
-        </select>
-
-        <nav className="my-2 my-md-0 mr-md-3">
-          {
-            navDetails.map(navDetail =>
-              <Link href={'/' + lang + '/' + navDetail.linkTo} key={navDetail.name} ><a className="p-2 text-dark">{navDetail.name}</a></Link>
-            )
-          }
-        </nav>
-      </div >
-    );
-  }
+      <nav className="my-2 my-md-0 mr-md-3">
+        {
+          navDetails.map(navDetail =>
+            <Link href={'/' + lang + '/' + navDetail.linkTo} key={navDetail.name} ><a className="p-2 text-dark">{navDetail.name}</a></Link>
+          )
+        }
+      </nav>
+    </div >
+  )
 }
-
-
-// Support.getInitialProps = async ({ req }) => {
-//     const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest.json')
-//     // .then((response) => {
-//     //     return {
-//     //         name: response.data.name,
-//     //         metaTag: response.data.metaTag,
-//     //     }
-//     // });
-
-//     console.log(res1.data.name);
-
-
-//     // const res = await getSingleNav("support")
-
-//     return {
-//         name: res1.data.name,
-//         metaTag: res1.data.metaTag
-//     }
-// }
-
 
 export default withRouter(Header)
