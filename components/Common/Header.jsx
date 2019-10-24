@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-
+import { withRouter } from 'next/router';
 import { getNavDetails } from "../../Services/fakeUserService";
 import Link from 'next/link'
 
 class Header extends Component {
   state = {
+    lang: 'in',
     navDetails: []
   }
 
   componentDidMount() {
+    console.log(this.props);
+
     const navDetails = getNavDetails("0001")
     this.setState({
       navDetails: navDetails.navs
@@ -21,29 +24,48 @@ class Header extends Component {
   }
 
   render() {
-    const { navDetails } = this.state
+    const { navDetails, lang } = this.state
     return (
       <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <h5 className="my-0 mr-md-auto font-weight-normal">Header</h5>
 
         <select>
-          <option value="volvo">En</option>
-          <option value="saab">SL</option>
-          <option value="mercedes">IN</option>
+          <option value="ca">Ca</option>
+          <option value="in">In</option>
         </select>
 
         <nav className="my-2 my-md-0 mr-md-3">
           {
             navDetails.map(navDetail =>
-              <Link href={'/ca?slug=' + navDetail.linkTo} as={'ca/' + navDetail.linkTo} key={navDetail.name} ><a className="p-2 text-dark">{navDetail.name}</a></Link>
+              <Link href={'/' + lang + '/' + navDetail.linkTo} key={navDetail.name} ><a className="p-2 text-dark">{navDetail.name}</a></Link>
             )
           }
-          {/* <Link href="/ca?slug=sen2" as="ca/sen2"  ><a className="p-2 text-dark">Canda check</a></Link> */}
         </nav>
-        {/* <button className="btn btn-outline-primary" onClick={(event) => this.LogoutFn(event)}>Log out</button> */}
       </div >
     );
   }
 }
 
-export default Header
+
+// Support.getInitialProps = async ({ req }) => {
+//     const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest.json')
+//     // .then((response) => {
+//     //     return {
+//     //         name: response.data.name,
+//     //         metaTag: response.data.metaTag,
+//     //     }
+//     // });
+
+//     console.log(res1.data.name);
+
+
+//     // const res = await getSingleNav("support")
+
+//     return {
+//         name: res1.data.name,
+//         metaTag: res1.data.metaTag
+//     }
+// }
+
+
+export default withRouter(Header)
