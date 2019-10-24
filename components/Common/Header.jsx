@@ -1,17 +1,16 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { HeaderContext } from '../../State/Contexts/HeaderContext'
-import { withRouter } from 'next/router';
+import Router, { withRouter } from 'next/router';
+
 import Link from 'next/link'
 
 
-const Header = () => {
+const Header = ({ router }) => {
   const { headerState, dispatch } = useContext(HeaderContext)
   const { lang, navDetails } = headerState
   const [country, setCountry] = useState("")
 
   useEffect(() => {
-    console.log(country);
-    console.log(lang);
     if (country != lang) {
       setCountry(lang)
     }
@@ -22,6 +21,10 @@ const Header = () => {
     dispatch({
       type: 'CHANGE_LANG',
       lang: e.target.value
+    })
+
+    Router.push({
+      pathname: '/' +  e.target.value + '/' + router.pathname.split('/')[2],
     })
   }
 
