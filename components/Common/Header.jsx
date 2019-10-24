@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 class Header extends Component {
   state = {
-    lang: 'in',
+    lang: 'ca',
     navDetails: []
   }
 
@@ -15,6 +15,14 @@ class Header extends Component {
     const navDetails = getNavDetails("0001")
     this.setState({
       navDetails: navDetails.navs
+    })
+  }
+
+
+  selectedChange = (event) => {
+    console.log(event.target.value);
+    this.setState({
+      lang: event.target.value
     })
   }
 
@@ -29,7 +37,7 @@ class Header extends Component {
       <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <h5 className="my-0 mr-md-auto font-weight-normal">Header</h5>
 
-        <select>
+        <select value={this.state.lang} onChange={this.selectedChange}>
           <option value="ca">Ca</option>
           <option value="in">In</option>
         </select>
