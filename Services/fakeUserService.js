@@ -29,16 +29,16 @@ const details = [{
         userId: "0001",
         navs: [{
             name: "Features",
-            linkTo: '/features'
+            linkTo: 'features'
         }, {
             name: 'Enterprise',
-            linkTo: '/enterprise'
+            linkTo: 'enterprise'
         }, {
             name: "Support",
-            linkTo: '/support'
+            linkTo: 'support'
         }, {
             name: 'Pricing',
-            linkTo: '/pricing'
+            linkTo: 'pricing'
         }]
     },
     {
@@ -88,7 +88,7 @@ const navDetails = [{
         name: 'enterprise',
         metaTag: {
             title: "Enterprise Page",
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             shortDescription: "This is a Enterprise Page",
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9dMKELLX3DEgw5EQuI3DhvoKxcopwfZ1c09DwGZDtjB8y7BDJ",
             url: "www.facebook.com/enterprise"
@@ -98,7 +98,7 @@ const navDetails = [{
         name: 'support',
         metaTag: {
             title: "Support Page",
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             shortDescription: "This is a Support Page",
             image: "https://www.nexthorizon.net/wp-content/uploads/2018/10/IT-Support-2.jpg",
             url: "www.facebook.com/Support"
@@ -108,7 +108,7 @@ const navDetails = [{
         name: 'features',
         metaTag: {
             title: "Feature Page",
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             shortDescription: "This is a Feature Page",
             image: "https://godotengine.org/themes/godotengine/assets/features/design_graphic.svg",
             url: "www.facebook.com/features"
@@ -117,7 +117,7 @@ const navDetails = [{
         name: 'pricing',
         metaTag: {
             title: "Pricing Page",
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             shortDescription: "This is a Pricing Page",
             image: "https://www.growthforce.com/hs-fs/hubfs/Importance%20of%20Pricing%20and%20Profitability.png?width=641&name=Importance%20of%20Pricing%20and%20Profitability.png",
             url: "www.facebook.com/Pricing"

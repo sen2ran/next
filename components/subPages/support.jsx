@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import AuthLaylout from '../Hoc/AuthLayout'
-import axios from 'axios'
-import { getSingleNav } from "../Services/fakeUserService";
-import Content from '../components/Common/Content'
+import AuthLaylout from '../../Hoc/AuthLayout'
+
+// import { getSingleNav } from "../Services/fakeUserService";
+import Content from '../Common/Content'
 
 class Support extends Component {
     state = {
