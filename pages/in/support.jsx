@@ -38,7 +38,7 @@ class Support extends Component {
 }
 
 Support.getInitialProps = async ({ req }) => {
-    const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest.json')
+    const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest/support.json')
     console.log(res1.data.name);
 
     return {

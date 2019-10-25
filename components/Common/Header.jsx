@@ -34,7 +34,7 @@ const Header = ({ router }) => {
 
       <select value={country} onChange={countryChanged}>
         <option value="ca">Ca</option>
-        <option value="in">In</option>
+        <option value="in">Ru</option>
       </select>
 
       <nav className="my-2 my-md-0 mr-md-3">

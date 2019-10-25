@@ -4,24 +4,6 @@ import axios from 'axios'
 import Content from '../../components/Common/Content'
 
 class Support extends Component {
-    state = {
-        name: "",
-        metaTag: ""
-    }
-
-    componentDidMount() {
-        // const singleNav = getSingleNav("support")
-        // this.setState({
-        //     name: singleNav.name,
-        //     metaTag: singleNav.metaTag
-        // })
-
-        // const res =  axios.get('https://m-city-7c464.firebaseio.com/metatest.json')
-        //     .then((response) => {
-        //         console.log(response.data);
-        //     });
-    }
-
     render() {
         const {
             title,
@@ -48,7 +30,7 @@ class Support extends Component {
 }
 
 Support.getInitialProps = async ({ req }) => {
-    const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest.json')
+    const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest/support.json')
     console.log(res1.data.name);
 
     return {
