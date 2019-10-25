@@ -3,7 +3,7 @@ import AuthLaylout from '../../Hoc/AuthLayout'
 import axios from 'axios'
 import Content from '../../components/Common/Content'
 
-class Support extends Component {
+class Enterprise extends Component {
     render() {
         const {
             title,
@@ -29,7 +29,7 @@ class Support extends Component {
     }
 }
 
-Support.getInitialProps = async ({ req }) => {
+Enterprise.getInitialProps = async ({ req }) => {
     const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest/enterprise.json')
     console.log(res1.data.name);
 
@@ -40,4 +40,4 @@ Support.getInitialProps = async ({ req }) => {
 }
 
 
-export default Support
+export default Enterprise

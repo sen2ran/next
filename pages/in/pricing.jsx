@@ -3,7 +3,7 @@ import AuthLaylout from '../../Hoc/AuthLayout'
 import axios from 'axios'
 import Content from '../../components/Common/Content'
 
-class Support extends Component {
+class Pricing extends Component {
     state = {
         name: "",
         metaTag: ""
@@ -37,7 +37,7 @@ class Support extends Component {
     }
 }
 
-Support.getInitialProps = async ({ req }) => {
+Pricing.getInitialProps = async ({ req }) => {
     const res1 = await axios.get('https://m-city-7c464.firebaseio.com/metatest/pricing.json')
     console.log(res1.data.name);
 
@@ -48,4 +48,4 @@ Support.getInitialProps = async ({ req }) => {
 }
 
 
-export default Support
+export default Pricing
